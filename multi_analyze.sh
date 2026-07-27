@@ -1,5 +1,6 @@
 #!/bin/bash
 
+timestamp=$(date)
 
 # Asking user to define the search term
 
@@ -9,7 +10,7 @@ echo "Searching for $search_term ..."
 echo
 
 echo "=== Multi Log Analysis ==="
-
+echo "Generated: $timestamp"
 echo
 
 
