@@ -61,9 +61,17 @@ echo "Log file: $logfile"
 echo "Search term: $search_term"
 
 # Number of findings
-echo "Findings: $( grep "$search_term" "$logfile" | wc -l)"
+findings=$(grep "$search_term" "$logfile" | wc -l)
+
+echo "Findings: $findings"
 
 echo
+
+if [ "$findings" -eq 0 ]
+then
+	echo "No matches found"
+exit
+fi
 
 # Print last N rows
 echo "Last $row_number matches:"
