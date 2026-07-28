@@ -1,5 +1,12 @@
 #!/bin/bash
 
+show_header () {
+echo "=== Multi Log Analysis ==="
+echo "Generated: $timestamp"
+echo
+}
+
+
 timestamp=$(date)
 
 # Asking user to define the search term
@@ -9,10 +16,7 @@ echo "Searching for $search_term ..."
 
 echo
 
-echo "=== Multi Log Analysis ==="
-echo "Generated: $timestamp"
-echo
-
+show_header
 
 for file in *.log
 do 
