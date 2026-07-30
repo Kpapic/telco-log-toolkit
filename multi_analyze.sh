@@ -13,6 +13,7 @@ echo "Search term: $search_term"
 echo "Processed log files: $log_count"
 echo "Total matches: $total"
 echo "Most matches found in: $top_log ($max_count)"
+echo "Logs with matches= $log_match"
 }
 
 timestamp=$(date)
@@ -29,6 +30,8 @@ log_count=0
 
 max_count=0
 top_log=""
+log_match=0
+
 show_header
 
 for file in *.log
@@ -43,6 +46,11 @@ then max_count=$count
     top_log=$file
 fi
 
+if ((count > 0))
+then
+    log_match=$((log_match + 1))
+    
+fi
 echo "$file $count"
 done
 echo
